@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ec80ca;
+        }
+    
+        h1 {
+            color: #333;
+        }
+    
+        div {
+            margin: 20px;
+        }
+    
+        input[type="text"], input[type="date"], select, button {
+            padding: 10px;
+            margin: 5px;
+        }
+    
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        li {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+            .high-priority {
+            background-color: orange;
+            border: 1px solid darkorange;
+        }
+
+        .medium-priority {
+            background-color: yellow;
+            border: 1px solid goldenrod;
+        }
+
+        .low-priority {
+            background-color: green;
+            border: 1px solid darkgreen;
+        }
+    </style>    
+</head>
+<body>
+    <h1>To Do List</h1>
+
+    <div>
+        <input type="text" id="taskInput" placeholder="Add a new task">
+        <input type="date" id="taskDate">
+        <select id="taskPriority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+        <input type="text" id="taskLabels" placeholder="Labels (comma-separated)">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <ul id="taskList">
+        <!-- Tasks will be added here dynamically -->
+    </ul>
+
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const taskDate = document.getElementById('taskDate');
+            const taskPriority = document.getElementById('taskPriority');
+            const taskLabels = document.getElementById('taskLabels');
+            
+            const taskText = taskInput.value.trim();
+            const date = taskDate.value;
+            const priority = taskPriority.value;
+            const labels = taskLabels.value.split(',').map(label => label.trim());
+
+            if (taskText === '') return;
+
+            const taskList = document.getElementById('taskList');
+            const taskItem = document.createElement('li');
+            taskItem.innerHTML = `
+                <strong>${taskText}</strong> (Date: ${date}, Priority: ${priority}, Labels: ${labels.join(', ')})
+            `;
+
+            if (priority === 'high') {
+        taskItem.classList.add('high-priority');
+    } else if (priority === 'medium') {
+        taskItem.classList.add('medium-priority');
+    } else if (priority === 'low') {
+        taskItem.classList.add('low-priority');
+    }
+
+            taskList.appendChild(taskItem);
+
+            // Clear the input fields
+            taskInput.value = '';
+            taskDate.value = '';
+            taskPriority.value = 'low';
+            taskLabels.value = '';
+        }
+    </script>
+</body>
+</html>
