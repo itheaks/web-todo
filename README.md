@@ -14,4 +14,4 @@ A web project for to do list where you can select date and add task based on pri
 
 https://github.com/itheaks/web-todo/assets/134759689/46ecd136-e0bb-4d82-b3b6-2759ed07ba6c
 
----
+---  
