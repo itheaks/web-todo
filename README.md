@@ -8,7 +8,7 @@ A web project for to do list where you can select date and add task based on pri
 
 ![image](https://github.com/itheaks/web-todo/assets/134759689/b24ad13c-e20c-4dee-93e3-72d4cf1d5615)
 
----
+--- 
  
 ### Video
 
