@@ -3,7 +3,7 @@ A web project for to do list where you can select date and add task based on pri
 
 ### Some Images
 ![image](https://github.com/itheaks/web-todo/assets/134759689/88f1b31d-3d0d-4c7f-8ff6-f37355f226ac)
-
+  
 ---
 
 ![image](https://github.com/itheaks/web-todo/assets/134759689/b24ad13c-e20c-4dee-93e3-72d4cf1d5615)
